@@ -230,7 +230,9 @@ const App = () => {
 
       <div className="copyright">
         <p>Designer and Coded By</p>
-        <a href="https://github.com/duc82">Duc Dang</a>
+        <a href="https://github.com/duc82" target="_blank">
+          Duc Dang
+        </a>
       </div>
     </div>
   );

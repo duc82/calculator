@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$bgContainer: rgb(194, 194, 214);
+$aboveColor: rgb(255, 165, 0);
+$borderColor: rgb(71, 71, 107);
+$bgClear: rgb(172, 57, 57);
+$bgOperator: rgb(102, 102, 102);
+$bgNumber: rgb(77, 77, 77);
+$bgEquals: rgb(0, 68, 102);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: $bgContainer;
+  flex-direction: column;
+
+  #calculator {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: black;
+    padding: 4px;
+    width: 320px;
+    border: 2px solid $borderColor;
+
+    .header {
+      text-align: end;
+      word-wrap: break-word;
+
+      .above {
+        color: $aboveColor;
+        margin-bottom: 8px;
+        min-height: 19px;
+      }
+
+      .below {
+        font-size: 22px;
+        margin-bottom: 4px;
+      }
+    }
+
+    .body {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+
+      & > button {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        font-weight: 500;
+        font-size: 18px;
+        color: white;
+        background-color: $bgNumber;
+
+        &:hover {
+          outline: 1px solid grey;
+          color: black;
+        }
+      }
+
+      #clear,
+      #remove {
+        background-color: $bgClear;
+      }
+
+      #subtract {
+        font-size: 26px;
+      }
+
+      #divide,
+      #add,
+      #remove {
+        font-size: 20px;
+      }
+
+      #equals {
+        grid-row: span 2;
+        height: 100%;
+        background-color: $bgEquals;
+      }
+
+      #zero {
+        grid-column: 1 / span 2;
+      }
+
+      .operator {
+        background-color: $bgOperator;
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: 16px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+
+    a {
+      color: $bgEquals;
+      text-decoration: none;
+    }
+  }
+}
